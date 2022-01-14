@@ -1,0 +1,15 @@
+
+
+
+.error-container {
+    /* border: 1px dashed lightgray; */
+    padding: 10px;
+    width: 100%;
+}
+
+ul {
+    list-style-position: inside;
+    color: lightcoral;
+}
+
+
