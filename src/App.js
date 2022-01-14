@@ -18,7 +18,7 @@ function App() {
     //setProduct([...product, productNew]);
     setProduct(prev => {
       const newProduct = [...prev, productNew];
-      const jsonProduct = JSON.stringify(productNew)
+      const jsonProduct = JSON.stringify(newProduct)
           // lưu vào bộ nhớ cục bộ
       localStorage.setItem('jobsProduct', jsonProduct)
       return newProduct;
