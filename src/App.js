@@ -4,14 +4,30 @@ import AppProduct from './component/AppProduct/index';
 
 function App() {
 
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(() => {
+    const storageJobs = JSON.parse(localStorage.getItem('jobsProduct'))
+    console.log(storageJobs)
+
+    return storageJobs || [];
+
+});
 
 
   const addProduct = (productNew) => {
     // console.log('App', productNew);
-    setProduct([...product, productNew]);
+    //setProduct([...product, productNew]);
+    setProduct(prev => {
+      const newProduct = [...prev, productNew];
+      const jsonProduct = JSON.stringify(productNew)
+          // lưu vào bộ nhớ cục bộ
+      localStorage.setItem('jobsProduct', jsonProduct)
+      return newProduct;
+      
+  })
 
   }
+
+  
   console.log('App', product);
 
   return (
